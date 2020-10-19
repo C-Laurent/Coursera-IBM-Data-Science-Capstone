@@ -1,0 +1,292 @@
+Accident Data¶
+
+- acc_ID: Accident identification number
+- day: Day of the accident
+- month: Month of the accident
+- year: Year of the accident
+- hrmn: Time of the accident in hour and minutes (hhmm)
+- ligthing : Lighting conditions
+    1. Daylight
+    2. Dusk or dawn
+    3. Darkness without public lighting
+    4. Darkness with public lighting not lit on
+    5. Darkness with public lighting on
+- county: French "department" code as defined by INSEE (National Institute of Statistics and Economic Studies)
+- city: City code as defined by INSEE
+- area:
+    1. Rural area
+    2. Urban area
+- intersection: 
+    1. No intersection
+    2. Intersection in X shape
+    3. Intersection in T shape
+    4. Intersection in Y shape
+    5. Intersection with more than 4 roads
+    6. Roundabout
+    7. Square
+    8. Railroad crossing
+    9. Other intersection
+- weather:
+    1. Normal
+    2. Light rain
+    3. Heavy rain
+    4. Snow - hail
+    5. Fog - smoke
+    6. Strong wind - storm
+    7. Blinding sunny weather
+    8. Cloudy weather
+    9. Other
+- collision:
+    1. Two vehicles - frontal collision
+    2. Two vehicles - collision from the rear
+    3. Two vehicles - side collision
+    4. Three vehicles and more - chain collision
+    5. Three or more vehicles - multiple collisions
+    6. Other collision
+    7. Without collision
+- adress: Postal address in City area
+- gps: GPS code:
+    - M = Mainland France
+    - A = French West Indies (Martinique or Guadeloupe)
+    - G = French Guiana
+    - R = Réunion island
+    - Y = Mayotte
+- lat: Latitude in decimal degrees
+- long: Longitude in decimal degrees
+
+
+User Data
+
+- acc_ID: Accident identification number.
+- place_in_veh: place occupied by the user in the vehicle at the time of the accident
+- user_type:
+    1. Driver
+    2. Passenger
+    3. Pedestrian
+    4. Pedestrian - rollerblade or scooter users
+- severity: There are 3 categories of injuries + 1 for the unarmed users.
+    1. Unarmed
+    2. Killed
+    3. Hospitalized wounded
+    4. Light injury
+- sex:
+    1. Male
+    2. Female
+- purpose: Reason for traveling at the time of the accident:
+    1. Home - work
+    2. Home - school
+    3. Shopping
+    4. Professional use
+    5. Leisure
+    9. Other
+- security: there are 2 characters:
+    - the first character details the existence of a safety equipment
+        1. Safety Belt
+        2. Helmet
+        3. Children car seat / booster
+        4. Reflective gear
+        9. Other
+    - the second one details the use of the safety equipment
+        1. Yes
+        2. No
+        3. Not determinable
+- pedestrian_loc: Location of the pedestrian at the time of the accident
+    - On roadway:
+        1. More than 50 m from the pedestrian crossing
+        2. Less than 50 m from the pedestrian crossing
+    - On pedestrian crossing:
+        3. Without crossing lights / signals
+        4. With crossing lights / signals
+    - Other:
+        5. On the sidewalk
+        6. On the road shoulder
+        7. On the emergency lane
+        8. On a side road
+- pedestrian_action: Action of the pedestrian at the time of the accident:
+    0. Not specified or not applicable
+    1. Moving towards the vehicle
+    2. Moving on the opposite direction from the vehicle
+    3. Crossing the road
+    4. Hidden from the vehicle
+    5. Playing - running
+    6. With a domestic animal
+    9. Other
+- pedestrian_situation: whether the injured pedestrian was alone or not
+    1. Alone
+    2. With someone
+    3. In a group
+- birth_year: Year of birth of the user
+- veh_ID: Vehicle identification number (including pedestrians who are linked to the vehicles that hit them)
+
+
+Vehicle Data
+
+- acc_ID: Accident identification number.
+- flow_dir: Flow direction :
+    1. Increasing kilometre marker or post code
+    2. Decreasing kilometre marker or post code
+- veh_cat: Category of the vehicle.
+    01. Bicycle
+    02. Motorbike / moped (<50cm3)
+    03. Small Car (<125cm3)
+    04. Registered scooter - Not used since 2006
+    05. Motorcycle - Not used since 2006
+    06. Side-car - Not used since 2006
+    07. Car - Light Vehicle only
+    08. Car - Light Vehicle with caravan / mobile home - Not used used anymore
+    09. Car - Light Vehicle with trailer - Not used used anymore
+    10. Utility vehicle with or without trailer and with a 1,5T <= Total Weight <= 3,5T (formerly Utility Vehicle only with 1,5T <= Total Weight <= 3,5T)
+    11. Utility vehicle with caravan / mobile home - Not used since 2006
+    12. Utility vehicle with trailer - Not used since 2006
+    13. Heavy truck alone with 3,5T <= Total Weight <= 7,5T
+    14. Heavy truck alone with 7,5T < Total Weight
+    16. Road Tractor alone
+    17. Road Tractor with semi-trailer
+    18. Public transport - not used since 2006
+    19. Tramway - not used since 2006
+    20. Heavy plant machinery
+    21. Tractor
+    30. Scooter (<50cm3)
+    31. Motorbike (50cm3 < <=125cm3)
+    32. Scooter (50cm3< <125cm3)
+    33. Motorbike (<125cm3)
+    34. Scooter (<125cm3)
+    35. Four wheeler bike / ATV light (50cm3<=)
+    36. Four wheeler bike / ATV (<50cm3)
+    37. Bus
+    38. Coach
+    39. Train
+    40. Tramway
+    99. Other vehicle
+- user_num: number of user(s) in the vehicle
+- fixed_obst: Fixed obstacle hit by the vehicle.
+    1. Other parked vehicle
+    2. Tree
+    3. Metal safety barrier
+    4. Concrete safety barrier
+    5. Other safety barrier
+    6. Building, wall, bridge pillar
+    7. Road sign or traffic signal
+    8. Pole
+    9. Street furniture
+    10. Railing / parapet
+    11. Shelter / border marker / bollard
+    12. Sidewalk edge
+    13. Ditch / embankment / rock wall
+    14. Other fixed obstacle on the roadway
+    15. Other fixed obstacle on the sidewalk or road shoulder
+    16. End of roadway without obstacle
+- mobile_obst: Mobile obstacle.
+    1. Pedestrian
+    2. Vehicle
+    3. Railcar
+    4. Domestic animal
+    5. Wild animal
+    9. Other
+- impact: first point of impact.
+    1. Front
+    2. Front right
+    3. Front left
+    4. Back
+    5. Back right
+    6. Back left
+    7. Right side
+    8. Left side
+    9. Multiple impacts (rollover)
+- manoeuvre: 
+    - Main manoeuvre before the accident:
+        1. No change of direction
+        2. Same flow direction, same lane
+        3. Between 2 lanes
+        4. Reversing
+        5. Going the wrong way
+        6. Going through the median strip
+        7. In the bus lane, right way
+        8. In the bus lane, wrong way
+        9. Entering the road
+        10. U-turn
+    - Changing Lane:
+        11. To left
+        12. To right
+    - Drifting:
+        13. Left
+        14. Right
+    - Turning:
+        15. Left
+        16. Right
+    - Overtaking:
+        17. Left
+        18. Right
+    - Other:
+        19. Crossing the roadway
+        20. Parking
+        21. Dodging
+        22. Opening the door of the vehicle
+        23. Stopped (not parkded)
+        24. Parked (with user(s) in the vehicle)
+- veh_ID: Vehicle identification number
+
+
+Location Data
+
+- acc_ID: Accident identification number.
+- road_cat : Category of road.
+    1. Highway / motorway
+    2. Main Road / A road
+    3. County road / B road
+    4. Local road / C road
+    5. Private road
+    6. Parking lot open to public traffic
+    9. Other
+- road_id: Road identification number
+- road_det1: Additional information on the road (example: 2 bis, 3 ter etc.)
+- road_det2: Additional information on the road (alpha-numerical ID)
+- road_type: Traffic type.
+    1 - One way
+    2 - 2-Lane single carriageway
+    3 - Dual carriageway
+    4 - Multi-lane single carriageway
+- lane_numb: total number of traffic lanes.
+- road_marker: Road marker ID.
+- rm_dist: Road marker distance.
+- spec_lane: Special lane.
+    1. Stand alone Bike lane
+    2. Bike lane (on roadway)
+    3. Other special lane
+- road_grad:
+    1. Flat
+    2. Slope
+    3. Top of the slope / hilltop
+    4. End of slope
+- road_shape:
+    1. Straight
+    2. Left curve
+    3. Right curve
+    4. S curve
+- med_strip: width of the median strip (if any).
+- road_width: width of the roadway only (excluding emergency lanes, parking slots...)
+- road_surf: surface of the road.
+    1. Normal
+    2. Wet
+    3. Water puddle
+    4. Flooded
+    5. Snow
+    6. Muddy
+    7. Icy
+    8. Oily
+    9. Other
+- infra: infrastucture.
+    1. Tunnel
+    2. Bridge
+    3. Interchange ramp
+    4. Railway
+    5. Special crossroad
+    6. Pedestrian zone
+    7. Road toll zone
+- loc: location of the accident.
+   1. On the roadway
+   2. On the emergency lane
+   3. On the road shoulder
+   4. On the sidewalk
+   5. On the bike lane
+- school_prox: proximity with a school.
